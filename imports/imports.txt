@@ -1,0 +1,7 @@
+amboot_bst_release.bin->/usr/local/bin
+md5_text->/usr/local/bin
+memddrtype.sh->/usr/local/bin
+memflash.sh->/usr/local/bin
+memdetect.sh->/usr/local/bin
+memscan.sh->/usr/local/bin
+memtester->/usr/local/bin
