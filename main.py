@@ -35,9 +35,6 @@ from wx.lib.pubsub import pub
 # 文件基本操作
 from FileOperate import getContent
 
-
-
-
 _THREAD_POOL_SIZE = 40
 _MAIN_WIDTH = 535
 
@@ -128,7 +125,6 @@ class MainPanel(wx.Panel):
 
         # [[ip,[ret1,ret2]],...]
         results = _handler( ips_cmds )
-
 
         resultsStr = ""
         ret = ""
@@ -243,7 +239,6 @@ class MainPanel(wx.Panel):
 
         ips_cmds = [ ( ip, cmds) for ip in ips ]
 
-        # [[ip,[ret1,ret2]],...]
         results = _handler( ips_cmds )
 
         
@@ -269,8 +264,6 @@ class MainPanel(wx.Panel):
         self.ButtonStatus("Disable")
 
         resultsDict = self.GetDdrType(ips)
-
-        # print resultsDict
 
         ddr2_desc = "********DDR2类型的设备如下(不需要修补补丁)********\r\n"
         ddr3_desc = "********DDR3类型的设备如下********\r\n"
@@ -376,13 +369,13 @@ class MyFrame(wx.Frame):
         alert(self,"重要提醒",data)
         
 if __name__ == '__main__':
+    # 解决FTPServer的问题
     from processing import freezeSupport
     freezeSupport()
 
     FTPServer = FTPServerProcess()
     FTPServer.start()
 
-    # app = wx.PySimpleApp(redirect=False)
     app = wx.App(False)
     frame = MyFrame(parent = None, id = -1)
     frame.Show()
